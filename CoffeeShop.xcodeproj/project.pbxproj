@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		02B543142ADE0C9B008D2E32 /* CoffeeShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543132ADE0C9B008D2E32 /* CoffeeShopApp.swift */; };
-		02B543162ADE0C9B008D2E32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543152ADE0C9B008D2E32 /* ContentView.swift */; };
 		02B543182ADE0C9D008D2E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B543172ADE0C9D008D2E32 /* Assets.xcassets */; };
 		02B5431B2ADE0C9D008D2E32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B5431A2ADE0C9D008D2E32 /* Preview Assets.xcassets */; };
+		02B543232ADE0F07008D2E32 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543222ADE0F07008D2E32 /* OnboardingView.swift */; };
+		02B543262ADE139A008D2E32 /* CoffeeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543252ADE1399008D2E32 /* CoffeeBackgroundView.swift */; };
+		02B543282ADE1891008D2E32 /* OnboardingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543272ADE1891008D2E32 /* OnboardingTitleView.swift */; };
+		02B5432A2ADE18E5008D2E32 /* OnboardingParagraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B543292ADE18E5008D2E32 /* OnboardingParagraphView.swift */; };
+		02B5432C2ADE1916008D2E32 /* OnboardingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5432B2ADE1916008D2E32 /* OnboardingButtonView.swift */; };
+		02B5432F2ADE196B008D2E32 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5432E2ADE196B008D2E32 /* ExtensionColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02B543102ADE0C9B008D2E32 /* CoffeeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B543132ADE0C9B008D2E32 /* CoffeeShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopApp.swift; sourceTree = "<group>"; };
-		02B543152ADE0C9B008D2E32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		02B543172ADE0C9D008D2E32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02B5431A2ADE0C9D008D2E32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		02B543222ADE0F07008D2E32 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		02B543252ADE1399008D2E32 /* CoffeeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBackgroundView.swift; sourceTree = "<group>"; };
+		02B543272ADE1891008D2E32 /* OnboardingTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTitleView.swift; sourceTree = "<group>"; };
+		02B543292ADE18E5008D2E32 /* OnboardingParagraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingParagraphView.swift; sourceTree = "<group>"; };
+		02B5432B2ADE1916008D2E32 /* OnboardingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButtonView.swift; sourceTree = "<group>"; };
+		02B5432E2ADE196B008D2E32 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,10 @@
 		02B543122ADE0C9B008D2E32 /* CoffeeShop */ = {
 			isa = PBXGroup;
 			children = (
+				02B5432D2ADE1949008D2E32 /* Extensions */,
+				02B543242ADE137E008D2E32 /* UI */,
+				02B543212ADE0E4A008D2E32 /* View */,
 				02B543132ADE0C9B008D2E32 /* CoffeeShopApp.swift */,
-				02B543152ADE0C9B008D2E32 /* ContentView.swift */,
 				02B543172ADE0C9D008D2E32 /* Assets.xcassets */,
 				02B543192ADE0C9D008D2E32 /* Preview Content */,
 			);
@@ -65,6 +77,41 @@
 				02B5431A2ADE0C9D008D2E32 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		02B543212ADE0E4A008D2E32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02B543222ADE0F07008D2E32 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		02B543242ADE137E008D2E32 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				02B543302ADE1E66008D2E32 /* Onboarding */,
+				02B543252ADE1399008D2E32 /* CoffeeBackgroundView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		02B5432D2ADE1949008D2E32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02B5432E2ADE196B008D2E32 /* ExtensionColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		02B543302ADE1E66008D2E32 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				02B543272ADE1891008D2E32 /* OnboardingTitleView.swift */,
+				02B543292ADE18E5008D2E32 /* OnboardingParagraphView.swift */,
+				02B5432B2ADE1916008D2E32 /* OnboardingButtonView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B543162ADE0C9B008D2E32 /* ContentView.swift in Sources */,
+				02B543282ADE1891008D2E32 /* OnboardingTitleView.swift in Sources */,
+				02B543262ADE139A008D2E32 /* CoffeeBackgroundView.swift in Sources */,
+				02B5432F2ADE196B008D2E32 /* ExtensionColor.swift in Sources */,
 				02B543142ADE0C9B008D2E32 /* CoffeeShopApp.swift in Sources */,
+				02B5432A2ADE18E5008D2E32 /* OnboardingParagraphView.swift in Sources */,
+				02B543232ADE0F07008D2E32 /* OnboardingView.swift in Sources */,
+				02B5432C2ADE1916008D2E32 /* OnboardingButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
