@@ -7,32 +7,38 @@
 
 import SwiftUI
 
-struct TabBar: View {
+struct MainTabBar: View {
+    @State private var selectedTab = 0
+    
     var body: some View {
-        TabView {
-            HomeView()
+        TabView(selection: $selectedTab) {
+            OrderView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag(0)
             
-            FavoriteView()
+            Text("Favorites")
                 .tabItem {
                     Label("Favorites", systemImage: "heart.fill")
                 }
+                .tag(1)
             
-            CartView()
+            Text("Bag")
                 .tabItem {
                     Label("Bag", systemImage: "bag")
                 }
+                .tag(2)
             
-            NotificationsView()
+            Text("Notifications")
                 .tabItem {
                     Label("Notifications", systemImage: "bell")
                 }
+                .tag(3)
         }
     }
 }
 
 #Preview {
-    TabBar()
+    MainTabBar()
 }
