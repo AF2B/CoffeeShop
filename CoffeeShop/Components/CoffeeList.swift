@@ -8,55 +8,58 @@
 import SwiftUI
 
 struct CoffeeList: View {
+    @Binding var coffeeName: String
+    @Binding var coffeeWith: String
+    
     var body: some View {
         ZStack(alignment: .topLeading) {
             Image("coffee")
                 .resizable()
-                .scaledToFill()
-                .frame(width: 200, height: 200)
-                .cornerRadius(16)
+                .scaledToFit()
+                .frame(width: 141, height: 132)
             
             HStack {
                 Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
+                    .font(.footnote)
+                    .foregroundStyle(.yellow)
                 
                 Text("4.8")
+                    .font(.footnote)
+                    .foregroundStyle(.white)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
             }
-            .padding(.top, 8)
-            .padding(.leading, 8)
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Cappuccino")
-                    .font(.title)
+            .offset(x: 6, y: 20)
+            
+            VStack(alignment: .leading) {
+                Text(coffeeName)
                     .fontWeight(.semibold)
+                    .foregroundStyle(Color(hex: 0x2F2D2C))
+                Text(coffeeWith)
+                    .foregroundStyle(Color(hex: 0x9B9B9B))
                 
-                Text("with Chocolate")
-                    .foregroundColor(Color(hex: 0x9B9B9B))
-                
-                HStack(alignment: .center) {
-                    Text("$4.53")
+                HStack {
+                    Text("$ 4.53")
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(hex: 0x2F4B4E))
+                        .foregroundStyle(Color(hex: 0x2F4B4E))
                     
                     Spacer()
                     
-                    Image(systemName: "plus")
-                        .frame(width: 44, height: 44)
-                        .background(Color(hex: 0xC67C4E))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .font(.title3)
+                    HStack(alignment: .center, spacing: 10) {
+                        Text("+")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 20, height: 20)
+                    .padding(8)
+                    .background(Color(red: 0.78, green: 0.49, blue: 0.31))
+                    .cornerRadius(10)
                 }
-                .padding(.top, 4)
             }
-            .padding(.top, 202)
+            .offset(y: 130)
         }
-        .frame(width: 200, height: 100)
+        .frame(width: 149, height: 239)
     }
 }
 
 #Preview {
-    CoffeeList()
+    CoffeeList(coffeeName: .constant("Cappucino"), coffeeWith: .constant("with Chocolate"))
 }
