@@ -8,82 +8,67 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var searchCoffee = ""
-    let gridItems = [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]
-
+    @State private var searchText = "Search Coffee"
+    @State private var coffeeName = "Cappucino"
+    @State private var coffeeWith = "with Chocolate"
     
     var body: some View {
         ZStack {
             Color(hex: 0x131313)
-                .ignoresSafeArea()
+                .edgesIgnoringSafeArea(.top)
             
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Location")
-                    .foregroundStyle(Color(hex: 0xB7B7B7))
-                    .padding(.horizontal, 0)
-                    .offset(CGSize(width: 0, height: 44))
-                
-                
-                HStack {
-                    Text("Bilzen, Tanjungbalai")
-                        .foregroundStyle(Color(hex: 0xDDDDDD))
-                    
-                    Image(systemName: "chevron.down")
-                        .foregroundStyle(.white)
+            VStack {
+                HStack() {
+                    VStack(alignment: .leading) {
+                        Text("Location")
+                            .foregroundStyle(Color(hex: 0xB7B7B7))
+                        
+                        HStack {
+                            Text("Bilzen, Tanjungbalai")
+                                .foregroundStyle(Color(hex: 0xDDDDDD))
+                            Image(systemName: "chevron.down")
+                                .foregroundStyle(Color(hex: 0xFFFFFF))
+                        }
+                    }
                     
                     Spacer()
                     
                     Image("profile")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 64, height: 64)
-                        .clipShape(RoundedRectangle(cornerRadius: 14, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                }
-                .offset(CGSize(width: 0, height: 18.0))
-                
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundStyle(.white)
-                    
-                    TextField("Search coffee", text: $searchCoffee)
-                    
-                    Image(systemName: "slider.horizontal.3")
                         .frame(width: 44, height: 44)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .background(Color(hex: 0xC67C4E))
-                        .foregroundStyle(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 18))
                 }
-                .padding(.horizontal, 18)
-                .frame(height: 60)
-                .background(Color(hex: 0x989898))
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .offset(CGSize(width: 0, height: 36.0))
+                .padding()
+                .padding(.horizontal)
+                .offset(y: -58)
                 
-                Image("backgroundpnghome")
-                    .offset(CGSize(width: 20, height: 92))
-                
-                Spacer()
+                SearchBar(searchText: $searchText)
+                    .offset(y: -44)
             }
-            .padding()
+            
+            Image("backgroundpnghome")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 315, height: 140)
+                .offset(y: 140)
             
             Carousel()
-                .offset(CGSize(width: 0, height: 280))
-        }
-        .frame(height: 300)
-        .padding(.bottom, 88)
-        Spacer()
-
-        ScrollView {
-            LazyVGrid(columns: gridItems, spacing: 256) {
-                ForEach(0 ..< 10) {item in
-                    CoffeeList()
+                .offset(y: 260)
+            
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible(), spacing: 6)], spacing: 6) {
+                    ForEach(0..<21) { coffee in
+                        NavigationLink(destination: DetailItemView()) {
+                            CoffeeList(coffeeName: $coffeeName, coffeeWith: $coffeeWith)
+                        }
+                    }
                 }
             }
+            .offset(y: 420)
         }
-        .padding(.top, 88)
-        .padding(.vertical, 14)
-        
-//        Spacer()
+        .frame(height: 280)
+        .offset(y: -240)
     }
 }
 
