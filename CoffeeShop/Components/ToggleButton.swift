@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ToggleButton: View {
     @Binding var isDeliverSelected: Bool
+    @Binding var isPickUp: Bool
     
     var body: some View {
         HStack {
             Button(action: {
-                isDeliverSelected = true
+                withAnimation {
+                    isDeliverSelected = true
+                    isPickUp = false
+                }
             }) {
-                Text("Deliver")
+                Text("Entrega")
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(isDeliverSelected ? Color(hex: 0xC67C4E) : Color(hex: 0xF2F2F2))
@@ -24,9 +28,12 @@ struct ToggleButton: View {
             .cornerRadius(10)
             
             Button(action: {
-                isDeliverSelected = false
+                withAnimation {
+                    isDeliverSelected = false
+                    isPickUp = true
+                }
             }) {
-                Text("Pick Up")
+                Text("Retirar")
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(!isDeliverSelected ? Color(hex: 0xC67C4E) : Color(hex: 0xF2F2F2))
@@ -39,5 +46,5 @@ struct ToggleButton: View {
 
 
 #Preview {
-    ToggleButton(isDeliverSelected: .constant(true))
+    ToggleButton(isDeliverSelected: .constant(true), isPickUp: .constant(false))
 }
