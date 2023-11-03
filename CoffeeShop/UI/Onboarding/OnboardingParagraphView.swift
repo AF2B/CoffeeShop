@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingParagraphView: View {
     var body: some View {
-        Text("The best grain, the finest roast, the powerful flavor.")
+        Text("O melhor grão, a torra mais refinada, o sabor poderoso.")
             .font(.system(size: 20, weight: .bold, design: .rounded))
             .foregroundColor(Color(UIColor(hex: 0xA9A9A9)))
             .multilineTextAlignment(.center)
