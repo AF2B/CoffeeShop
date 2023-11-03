@@ -12,18 +12,19 @@ struct OrderView: View {
     @State private var isPickUp: Bool
     @State private var coffeeCount = 0
     @State private var isDeliveryViewPresented = false
+    @State private var hiddenTabBar = false
     @Environment(\.dismiss) var dismiss
     
     init(isDeliverSelected: Bool, isPickUp: Bool) {
         self._isDeliverSelected = State(initialValue: isDeliverSelected)
         self._isPickUp = State(initialValue: isPickUp)
+        self._hiddenTabBar = State(initialValue: hiddenTabBar)
     }
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    
                     ToggleButton(isDeliverSelected: $isDeliverSelected, isPickUp: $isPickUp)
                         .background(Color(hex: 0xF2F2F2))
                         .padding(.horizontal)
@@ -231,22 +232,20 @@ struct OrderView: View {
                     )
                 }
             }
+            .padding(42)
         }
+        .navigationTitle("Pedido")
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Pedido")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.top, 16)
-            }
-            ToolbarItem(placement: .principal) {
+            ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
                     dismiss()
                 }) {
-                    Image(systemName: "chevron.left") // Personaliza o botão de voltar
+                    Image(systemName: "chevron.left")
                         .imageScale(.large)
-                        .foregroundColor(.primary) // Defina a cor desejada
+                        .foregroundColor(.primary)
+                        .padding(.top, 12)
                 }
             }
         }
