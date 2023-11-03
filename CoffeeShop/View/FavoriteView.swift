@@ -9,7 +9,20 @@ import SwiftUI
 
 struct FavoriteView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Seus Favoritos")
+                    .font(.largeTitle)
+                    .padding()
+                
+                List {
+                    Text("Café Espresso")
+                    Text("Cappuccino")
+                    Text("Latte")
+                    Text("Mocha")
+                }
+            }
+        }
     }
 }
 
