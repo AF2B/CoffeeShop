@@ -1,0 +1,75 @@
+{
+    "data": [
+        {
+            "type": "espresso",
+            "name": "Espresso",
+            "description": "Puro e forte",
+            "price": 2.99,
+            "rating": 4.5
+        },
+        {
+            "type": "cappuccino",
+            "name": "Cappuccino",
+            "description": "com chocolate",
+            "price": 4.53,
+            "rating": 4.8
+        },
+        {
+            "type": "latte",
+            "name": "Latte",
+            "description": "com baunilha",
+            "price": 3.99,
+            "rating": 4.0
+        },
+        {
+            "type": "americano",
+            "name": "Americano",
+            "description": "forte e preto",
+            "price": 3.49,
+            "rating": 4.2
+        },
+        {
+            "type": "mocha",
+            "name": "Mocha",
+            "description": "com chocolate e creme",
+            "price": 4.99,
+            "rating": 4.7
+        },
+        {
+            "type": "macchiato",
+            "name": "Macchiato",
+            "description": "com caramelo",
+            "price": 4.29,
+            "rating": 4.4
+        },
+        {
+            "type": "turkish",
+            "name": "Café Turco",
+            "description": "tradicional e forte",
+            "price": 3.79,
+            "rating": 4.1
+        },
+        {
+            "type": "french",
+            "name": "Cafeteira Francesa",
+            "description": "encorpado e rico",
+            "price": 5.49,
+            "rating": 4.6
+        },
+        {
+            "type": "coldbrew",
+            "name": "Cold Brew",
+            "description": "gelado e refrescante",
+            "price": 4.99,
+            "rating": 4.3
+        },
+        {
+            "type": "affogato",
+            "name": "Affogato",
+            "description": "com uma bola de sorvete",
+            "price": 6.49,
+            "rating": 4.9
+        }
+    ]
+}
+
