@@ -58,11 +58,18 @@ struct DetailItemView: View {
                             
                             Spacer()
                             
-                            Image("bean")
-                                .background(Color(hex: 0xC67C4E))
+                            Image("graocafe")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 24, height: 24)
+                                .background(.white)
+                                .foregroundStyle(.red)
                             
-                            Image("milk")
-                                .background(Color(hex: 0xC67C4E))
+                            Image("caixadeleite")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                                .background(.white)
                         }
                         .padding(.vertical, 6)
                         
@@ -165,14 +172,10 @@ struct DetailItemView: View {
                     .padding(42)
                 }
             }
+            .navigationTitle("Pedido")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Pedido")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .padding(.top, 16)
-                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         dismiss()
@@ -180,7 +183,7 @@ struct DetailItemView: View {
                         Image(systemName: "chevron.left") // Personaliza o
                             .imageScale(.large)
                             .foregroundColor(.primary)
-                            .padding(.top, 16)
+                            .padding(.top, 12)
                     }
                 }
             }
