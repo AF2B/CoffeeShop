@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingTitleView: View {
     var body: some View {
-        Text("Coffee so good, your taste buds will love it.")
+        Text("Café tão bom que suas papilas gustativas vão adorar")
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
