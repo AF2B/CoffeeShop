@@ -19,17 +19,23 @@ struct SearchBar: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .foregroundStyle(Color(hex: 0x989898))
             
-            if !searchText.isEmpty {
-                Button(action: {
+            Button {
+                if !searchText.isEmpty {
                     searchText = ""
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
+                }
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .frame(width: 32, height: 32)
+                        .foregroundColor(Color(hex: 0xC67C4E))
+                    
+                    Image(systemName: "slider.horizontal.3")
+                        .foregroundColor(.white)
                         .imageScale(.medium)
                 }
             }
         }
-        .padding(10)
+        .padding(14)
         .background(Color(hex: 0x313131))
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .padding(.horizontal)
