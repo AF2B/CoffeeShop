@@ -38,7 +38,7 @@ struct CoffeeList: View {
                     .foregroundStyle(Color(hex: 0x9B9B9B))
                 
                 HStack {
-                    Text("$ 4.53")
+                    Text("R$ 4.53")
                         .fontWeight(.semibold)
                         .foregroundStyle(Color(hex: 0x2F4B4E))
                     
