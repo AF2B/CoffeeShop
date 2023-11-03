@@ -14,28 +14,34 @@ struct MainTabBar: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("Inicio", systemImage: "house")
                 }
                 .tag(0)
             
-            Text("Favorites")
+            FavoriteView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart.fill")
                 }
                 .tag(1)
             
-            Text("Bag")
+            CartView()
                 .tabItem {
-                    Label("Bag", systemImage: "bag")
+                    Label("Carrinho", systemImage: "cart")
                 }
                 .tag(2)
             
-            Text("Notifications")
+            NotificationsView()
                 .tabItem {
                     Label("Notifications", systemImage: "bell")
                 }
                 .tag(3)
         }
+        .navigationBarBackButtonHidden(true)
+        .background(
+            Color.white.opacity(0.9)
+                .ignoresSafeArea()
+        )
+        .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.8, blendDuration: 0.25))
     }
 }
 
