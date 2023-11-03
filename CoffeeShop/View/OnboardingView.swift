@@ -22,8 +22,8 @@ struct OnboardingView: View {
                     
                     OnboardingParagraphView()
                     
-                    NavigationLink(destination: HomeView()) {
-                        Text("Get Started")
+                    NavigationLink(destination: MainTabBar()) {
+                        Text("Vamos começar")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                             .frame(width: 280, height: 70)
