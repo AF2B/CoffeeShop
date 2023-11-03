@@ -11,7 +11,7 @@ import MapKit
 struct DeliveryView: View {
     @State private var coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -8.052432, longitude: -34.891836), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-    @State private var isBottomSheetOpen = true
+    @State private var isBottomSheetOpen = false
     
     var body: some View {
         ZStack {
@@ -34,7 +34,9 @@ struct DeliveryView: View {
                 .padding(.bottom, 24)
             }
         }
+        .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         .sheet(isPresented: $isBottomSheetOpen, content: {
             BottomSheetView(isOpen: $isBottomSheetOpen)
                 .presentationDetents([.medium, .large])
@@ -140,6 +142,15 @@ struct BottomSheetView: View {
                 HStack {
                     Image(systemName: "phone.fill")
                         .foregroundStyle(Color(hex: 0x808080))
+                        .onTapGesture {
+                            withAnimation {
+                                
+                            }
+                        }
+                        .scaleEffect(1.0, anchor: .center)
+                        .animation(.interpolatingSpring(stiffness: 100, damping: 10).delay(0.4))
+                        
+
                 }
                 .frame(width: 54, height: 54)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
