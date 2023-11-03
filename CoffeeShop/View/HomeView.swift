@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var searchText = "Search Coffee"
+    @State private var searchText = "Algum café em mente? 🤔"
     @State private var coffeeName = "Cappucino"
-    @State private var coffeeWith = "with Chocolate"
+    @State private var coffeeWith = "com Chocolate"
+    @State private var isProfileViewPresented = false
+    
     
     var body: some View {
         NavigationView {
@@ -21,11 +23,11 @@ struct HomeView: View {
                 VStack {
                     HStack() {
                         VStack(alignment: .leading) {
-                            Text("Location")
+                            Text("Localização")
                                 .foregroundStyle(Color(hex: 0xB7B7B7))
                             
                             HStack {
-                                Text("Bilzen, Tanjungbalai")
+                                Text("Recife, Brasil")
                                     .foregroundStyle(Color(hex: 0xDDDDDD))
                                 Image(systemName: "chevron.down")
                                     .foregroundStyle(Color(hex: 0xFFFFFF))
@@ -34,11 +36,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Image("profile")
+                        NavigationLink(destination: ProfileView(), isActive: $isProfileViewPresented) {
+                            EmptyView()
+                        }
+                        
+                        Image("merecent")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 44, height: 44)
                             .clipShape(RoundedRectangle(cornerRadius: 18))
+                            .onTapGesture {
+                                isProfileViewPresented = true
+                            }
                     }
                     .padding()
                     .padding(.horizontal)
@@ -69,7 +78,7 @@ struct HomeView: View {
                 .offset(y: 420)
             }
             .frame(height: 280)
-        .offset(y: -240)
+            .offset(y: -240)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -89,4 +98,13 @@ extension Color {
             opacity: 1
         )
     }
+}
+
+struct Coffee: Identifiable, Codable {
+    var id = UUID()
+    var type: String
+    var name: String
+    var description: String
+    var price: Double
+    var rating: Double
 }
